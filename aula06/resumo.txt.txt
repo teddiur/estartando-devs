@@ -1,0 +1,5 @@
+trabalho em grupo
+
+git branch -a  = lista as branchs existentes
+git checkout -b nome-da-branch  = cria uma branch com nome-da-branch
+git checkout nome-da-branch  = vai pra branch nome-da-branch
