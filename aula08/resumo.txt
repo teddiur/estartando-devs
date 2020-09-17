@@ -1,0 +1,15 @@
+MEDIA QUERY
+
+é uma condicional, aplica determinado bloco de css se passar nas condições
+@media (keyword: value) {
+    seletor {
+        propriedade: valor;
+    }
+}
+
+PRINCIPAIS PROPRIEDADES
+max-width, min-width, tv, orientation: landscape
+
+OPERADORES LÓGICOS
+and -> ambas true
+, -> pelo menos um true
