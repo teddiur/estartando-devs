@@ -1,0 +1,33 @@
+pseudo-classes e fontes
+
+
+PSEUDO-CLASSES
+são seletores de estado, como :hover, :visited, etc
+ele tem uma especifidade maior que as já estudadas
+
+fontes
+@font-face {
+    font-family: "nome-da-fonte";
+    src: url(link da font);
+}
+tambem da pra fazer por
+<link href="link-do-google-api" rel="stylesheet">
+isso importa um css que que tem o @font-face
+
+SELETORES COMBINADOS
+div a {
+    a descendente de div
+}
+div > a {
+    a filho direto de div
+}
+div ~ a {
+    todos os "a" irmãos a seguir
+}
+div + a {
+    apenas o primeiro "a" irmão a seguir
+}
+
+ TRANSFORM
+ TRANSITION
+ 
