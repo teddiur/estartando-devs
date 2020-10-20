@@ -1,0 +1,27 @@
+SASS
+é um pré-compilador de css. tem uma sintaxe mais gostosa e o código fica mais organizado 
+
+VARIAVEIS
+declara-se com $nome no top-level e pode-se usar no arquivo todo
+
+ANINHAMENTO
+pode-se declarar um seletor dentro de um seletor, isso conferirá uma especificidade maior a ele
+nav {
+    background-color: red;
+    a {
+        color: blue;
+    }
+}
+
+MIXIN
+é uma "função pra css", da pra setar um default pras variáveis
+%mixin flexbox($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-content: $align;
+}
+
+body {
+    %include flexbox(row, center, flex-start)
+}
