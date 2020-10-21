@@ -6,18 +6,18 @@ Pegue um array de inteiros e retorne a soma de todos os elementos.
 ### SAIDA EXEMPLO
 11
 */
-const intList = [3, 7, 1]
+// const intList = [3, 7, 1]
 
-function arraySum(list) {
-  let totalSum = 0;
-  list.forEach((element) => {
-    totalSum = totalSum + element
-  });
+// function arraySum(list) {
+//   let totalSum = 0;
+//   list.forEach((element) => {
+//     totalSum += element
+//   });
 
-  return totalSum
-}
+//   return totalSum
+// }
 
-console.log(arraySum(intList))
+// console.log(arraySum(intList))
 
 /*
 Receba um array de aluno com as notas 4 dos bimestres, e retorne um array contendo o nome, a media de cada aluno e informaçao se o mesmo foi aprovado ou reprovado, sabendo que as notas podem variar de 0 a 10 e a média minima para aprovaçao é 7.
@@ -68,30 +68,25 @@ const students = [
   },
   {
     nome: "Marta",
-    notas: [7, 6, 5, 8],
+    notas: [7, 6, 7, 8],
   },
 ];
-const numberPeriods = 4;
 
-//helper function
-function calcMean(scores) {
-  let sumScores = 0;
-  scores.forEach((score) => {
-    sumScores = sumScores + score
-  });
-  return sumScores / numberPeriods
+function calcMean(numbers) {
+  // filters out falsy values
+  numbers = numbers.filter((element) => element);
+  numbersSum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+  const mean = numbersSum / numbers.length;
+  return mean;
 }
 
 //object constructor
 function makeReport(student) {
-  return {
-    nome: student.nome,
-    media: calcMean(student.notas),
-    status: this.media > 7 ? "aprovado" : "reprovado"
-  }
+  this.nome = student.nome;
+  this.media = calcMean(student.notas);
+  this.status = this.media >= 7 ? "aprovado" : "reprovado";
 }
 
-const report = [];
-students.forEach((student) => { report.push(makeReport(student)) });
+const report = students.map((student) => new makeReport(student));
 
-console.log(report)
+console.table(report, ['nome', 'media', 'status'])
